@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drum Canvas</title>
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+  <style>
+    body {
+      background-color: #111;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #canvas-container {
+      position: absolute;
+      bottom: 0;
+      left: 80px;
+      right: 0;
+    }
+
+    #drumCanvas {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      display: block;
+      border: 1px solid #555;
+    }
+
+    #bpmControls {
+      position: absolute;
+      bottom: 320px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: white;
+      font-size: 18px;
+      user-select: none;
+      z-index: 10;
+    }
+
+    #scaleSlider {
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div style="position:absolute; top:20px; left:20px; z-index:20; background:#222; padding:10px; border:1px solid #555;">
+    <label style="color:white;">Выбрать песню:</label>
+    <select id="songSelect"></select>
+    <button onclick="loadSelectedSong()">Загрузить</button>
+  </div>
+  <div style="position:absolute; top:90px; left:20px; z-index:20; background:#222; padding:10px; border:1px solid #555;">
+  <div id="timeDisplay" style="position:absolute; top:160px; left:20px; color:white; z-index:20; background:#222; padding:10px; border:1px solid #555;">
+    Время: <span id="currentTime">0.00</span> сек
+  </div>
+    <label style="color:white;">Загрузить MIDI:</label>
+    <input type="file" id="midiInput" accept=".mid,.midi" />
+    <input type="text" id="saveName" placeholder="название_песни" style="width:140px;" />
+    <button onclick="uploadAndConvert()">Обработать</button>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="drumCanvas" width="1200" height="300"></canvas>
+    <div id="bpmControls">
+      <div id="bpmDisplay">BPM: <span id="bpmValue">120</span></div>
+      <div id="gridControls">
+        <button id="btn4" onclick="setGridDivision(4)">4/4</button>
+        <button id="btn8" onclick="setGridDivision(8)">8/8</button>
+        <button id="btn16" onclick="setGridDivision(16)">16/16</button>
+      </div>
+      <input type="range" id="scaleSlider" min="0.5" max="2" value="1" step="0.1" />
+    </div>
+  </div>
+
+  <script>
+  const HIT_WINDOW = 0.15;
+  let scaleFactor = 1.0;
+  let gridDivision = 16; // По умолчанию 16-е доли
+  let accumulatedTime = 0;
+  let lastFrameTime = performance.now() / 1000;
+  const globalStartTime = performance.now() / 1000;
+
+  const MIDI_TO_INSTRUMENT = {
+    36: 'kick',
+    38: 'snare',
+    42: 'hihat'
+  };
+
+  const canvas = document.getElementById('drumCanvas');
+  const ctx = canvas.getContext('2d');
+
+  const COLORS = {
+    hit: '#0f0',       // Попал — зелёный
+    early: '#00f',     // Рано — синий
+    late: '#f00'       // Поздно — красный
+  };
+
+  const NOTE_POS_Y = {
+    kick: 150,
+    snare: 100,
+    hihat: 50
+  };
+
+  function drawNote(x, y, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, 20, 20);
+  }
+
+  function setGridDivision(div) {
+    gridDivision = div;
+
+    document.getElementById('btn4').style.backgroundColor = '';
+    document.getElementById('btn8').style.backgroundColor = '';
+    document.getElementById('btn16').style.backgroundColor = '';
+
+    const activeBtnId = div === 4 ? 'btn4' : div === 8 ? 'btn8' : 'btn16';
+    document.getElementById(activeBtnId).style.backgroundColor = '#555';
+  }
+
+  let originalBPM = 120;
+  let bpmLoaded = false;
+  let bpmValue = 120;
+
+  const bpmSpan = document.getElementById('bpmValue');
+  const bpmDisplay = document.getElementById('bpmDisplay');
+  let isDraggingBPM = false;
+  let startX = 0;
+  let initialBPM = bpmValue;
+
+  bpmDisplay.addEventListener('mousedown', (e) => {
+    isDraggingBPM = true;
+    startX = e.clientX;
+    initialBPM = bpmValue;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (isDraggingBPM) {
+      const deltaX = e.clientX - startX;
+      let newBPM = initialBPM + deltaX;
+      newBPM = Math.max(30, Math.min(240, newBPM));
+      bpmValue = newBPM;
+      bpmSpan.textContent = Math.round(newBPM);
+    }
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDraggingBPM = false;
+  });
+
+  function fetchInitialBPM() {
+    accumulatedTime = 0;
+    console.log("Fetching initial BPM...");
+    fetch('static/notes/data.json')
+      .then(res => res.json())
+      .then(data => {
+        bpmValue = data.BPM || 120;
+        document.getElementById('bpmValue').textContent = bpmValue;
+        originalBPM = data.BPM || 120;
+        bpmLoaded = true;
+        requestAnimationFrame(animate);
+      })
+      .catch(err => {
+        console.error('Ошибка загрузки BPM из data.json:', err);
+        requestAnimationFrame(animate); // всё равно начинаем, если ошибка
+      });
+  }
+
+  function fetchAndDraw() {
+    fetch('static/notes/data.json')
+      .then(res => res.json())
+      .then(data => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const currentTime = accumulatedTime;
+        const BPM = bpmValue;
+        const secondsPerScreen = 6;
+        // Скорость движения зависит от BPM (масштаб времени не меняется)
+        const pixelsPerSecond = (canvas.width / secondsPerScreen) * scaleFactor;
+
+        ctx.strokeStyle = 'orange';
+        ctx.beginPath();
+        ctx.moveTo(250, 0);
+        ctx.lineTo(250, canvas.height);
+        ctx.stroke();
+
+        // Draw moving grid lines
+        ctx.save();
+        ctx.globalAlpha = 0.4;
+        const beatsPerSecond = originalBPM / 60;
+        const secondsPerBeat = 1 / beatsPerSecond;
+        const gridSpacing = secondsPerBeat * pixelsPerSecond / (gridDivision / 4);
+
+        const startX = 250 - (currentTime * pixelsPerSecond) % gridSpacing;
+
+        for (let x = startX; x > 0; x -= gridSpacing) {
+          const beatNumber = Math.round(((x - 250 + currentTime * pixelsPerSecond) / pixelsPerSecond) * beatsPerSecond);
+          const isStrongBeat = beatNumber % 1 === 0;
+          ctx.strokeStyle = isStrongBeat ? '#888' : '#444';
+          ctx.lineWidth = isStrongBeat ? 2 : 1;
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, canvas.height);
+          ctx.stroke();
+        }
+
+        for (let x = startX + gridSpacing; x < canvas.width; x += gridSpacing) {
+          const beatNumber = Math.round(((x - 250 + currentTime * pixelsPerSecond) / pixelsPerSecond) * beatsPerSecond);
+          const isStrongBeat = beatNumber % 1 === 0;
+          ctx.strokeStyle = isStrongBeat ? '#888' : '#444';
+          ctx.lineWidth = isStrongBeat ? 2 : 1;
+          ctx.beginPath();
+          ctx.moveTo(x, 0);
+          ctx.lineTo(x, canvas.height);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        const originalNotes = data.originalNotes || [];
+        const studentNotes = data.studentNotes || [];
+
+        originalNotes.forEach((note) => {
+          const isHit = studentNotes.some(
+            (sNote) =>
+              sNote.instrument === note.instrument &&
+              Math.abs(sNote.time - note.time) <= HIT_WINDOW &&
+              sNote.hit === true
+          );
+          if (isHit) return; // Пропустить отрисовку, если попадание уже зафиксировано
+          const x = 250 + (note.time - currentTime) * pixelsPerSecond;
+          const y = NOTE_POS_Y[note.instrument] || 75;
+
+          let color = 'white';
+          // Новое условие: если время ноты прошло, определяем цвет по played, иначе early (синий)
+          if (note.time <= currentTime) {
+            if (note.played === true) {
+              color = COLORS.hit;
+            } else if (note.played === false) {
+              color = COLORS.late;
+            } else {
+              color = COLORS.early;
+            }
+          }
+
+          if (x > 0 && x < canvas.width) {
+            drawNote(x, y, color);
+          }
+        });
+
+        // --- Visualize studentNotes based on hit status ---
+        studentNotes.forEach((note) => {
+          const x = 250 + (note.time - currentTime) * pixelsPerSecond;
+          const y = NOTE_POS_Y[note.instrument] || 75;
+          let color = 'blue'; // default for early/miss
+
+          if (note.hasOwnProperty('hit')) {
+            color = note.hit ? COLORS.hit : COLORS.late;
+          }
+
+          if (x > 0 && x < canvas.width) {
+            drawNote(x, y, color);
+          }
+        });
+      })
+      .catch(err => console.error('Ошибка загрузки data.json:', err));
+  }
+
+  function animate() {
+    if (!bpmLoaded) return;
+    const now = performance.now() / 1000;
+    const deltaTime = now - lastFrameTime;
+    lastFrameTime = now;
+    accumulatedTime += deltaTime * (bpmValue / originalBPM);
+    fetchAndDraw();
+    // --- Show time and emit to server ---
+    document.getElementById("currentTime").textContent = accumulatedTime.toFixed(2);
+    socket.emit("beat_position", accumulatedTime);
+    requestAnimationFrame(animate);
+  }
+
+  document.getElementById('scaleSlider').addEventListener('input', function (e) {
+    scaleFactor = parseFloat(e.target.value);
+  });
+
+  fetchInitialBPM();
+
+  // Socket.IO: обработка попадания студента с анализом и обновлением originalNotes
+  const socket = io();
+  socket.on('student_hit', (data) => {
+    const studentTime = data.time;
+    const studentInstr = data.instrument;
+
+    fetch('static/notes/data.json')
+      .then(res => res.json())
+      .then(json => {
+        const originalNotes = json.originalNotes || [];
+        const HIT_WINDOW = 0.15;
+
+        for (let note of originalNotes) {
+          if (
+            note.instrument === studentInstr &&
+            Math.abs(note.time - studentTime) <= HIT_WINDOW &&
+            !note.hasOwnProperty('played')
+          ) {
+            note.played = true;
+            break;
+          }
+        }
+
+        // Если не найдено совпадение — добавим фейковую красную ноту
+        const matched = originalNotes.some(note =>
+          note.instrument === studentInstr &&
+          Math.abs(note.time - studentTime) <= HIT_WINDOW
+        );
+
+        if (!matched) {
+          originalNotes.push({
+            instrument: studentInstr,
+            time: studentTime,
+            played: false
+          });
+        } else {
+          console.log(`✅ Попадание: ${studentInstr} at ${studentTime.toFixed(3)}`);
+        }
+
+        const updatedJson = { ...json, originalNotes };
+
+        fetch('/update-notes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(updatedJson)
+        });
+      })
+      .catch(err => console.error('Ошибка при обработке удара студента:', err));
+  });
+
+  document.addEventListener("keydown", function (e) {
+    let instrument = null;
+    if (e.key === "a") instrument = "kick";
+    if (e.key === "s") instrument = "snare";
+    if (e.key === "d") instrument = "hihat";
+
+    if (instrument) {
+      socket.emit("student_note", {
+        instrument: instrument,
+        canvas_time: accumulatedTime
+      });
+    }
+  });
+
+  setGridDivision(gridDivision);
+
+  // --- Song selection prototype ---
+  function loadSelectedSong() {
+    const song = document.getElementById('songSelect').value;
+    fetch('/load-song', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ song })
+    })
+    .then(res => res.json())
+    .then(data => {
+      const overlay = document.createElement("div");
+      overlay.style.position = "fixed";
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = "100%";
+      overlay.style.height = "100%";
+      overlay.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+      overlay.style.color = "white";
+      overlay.style.display = "flex";
+      overlay.style.flexDirection = "column";
+      overlay.style.justifyContent = "center";
+      overlay.style.alignItems = "center";
+      overlay.style.zIndex = 9999;
+
+      const message = document.createElement("div");
+      message.textContent = "Песня загружена. Готов начать тренировку?";
+      message.style.fontSize = "24px";
+      message.style.marginBottom = "20px";
+
+      const startBtn = document.createElement("button");
+      startBtn.textContent = "Начать тренировку";
+      startBtn.style.padding = "10px 20px";
+      startBtn.style.fontSize = "18px";
+      startBtn.onclick = () => {
+        document.body.removeChild(overlay);
+        socket.emit("reset_canvas_timer");
+        socket.emit("start_canvas_now");
+        accumulatedTime = 0;
+        lastFrameTime = performance.now() / 1000;
+        fetchInitialBPM();
+
+        const minusTrack = new Audio(`/static/audio/uploaded/${song}`);
+        minusTrack.loop = true;
+        minusTrack.play();
+      };
+
+      overlay.appendChild(message);
+      overlay.appendChild(startBtn);
+      document.body.appendChild(overlay);
+    })
+    .catch(err => console.error('Ошибка загрузки песни:', err));
+  }
+
+  // Получить список песен
+  fetch('/list-songs')
+    .then(res => res.json())
+    .then(data => {
+      const select = document.getElementById('songSelect');
+      data.songs.forEach(song => {
+        const option = document.createElement('option');
+        option.value = song;
+        option.textContent = song;
+        select.appendChild(option);
+      });
+    })
+    .catch(err => console.error('Ошибка загрузки списка песен:', err));
+  // --- MIDI upload and convert ---
+  function uploadAndConvert() {
+    const fileInput = document.getElementById('midiInput');
+    const nameInput = document.getElementById('saveName');
+    const file = fileInput.files[0];
+    const name = nameInput.value.trim();
+
+    if (!file || !name) {
+      alert("Выберите MIDI-файл и введите название.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("name", name);
+
+    fetch('/upload-midi', {
+      method: 'POST',
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      alert(data.message || "Файл обработан");
+      window.location.reload();
+    })
+    .catch(err => console.error("Ошибка загрузки MIDI:", err));
+  }
+</script>
+</body>
+</html>

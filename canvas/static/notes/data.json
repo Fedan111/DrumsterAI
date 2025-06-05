@@ -1,0 +1,1618 @@
+{
+  "BPM": 120,
+  "originalNotes": [
+    {
+      "time": 0.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 0.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 0.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 0.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 0.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 0.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 1.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 1.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 1.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 1.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 1.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 1.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 1.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 2.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 2.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 2.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 2.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 2.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 2.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 3.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 3.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 3.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 3.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 3.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 3.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 3.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 4.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 4.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 4.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 4.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 4.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 4.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 5.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 5.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 5.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 5.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 5.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 5.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 5.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 6.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 6.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 6.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 6.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 6.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 6.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 7.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 7.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 7.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 7.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 7.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 7.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 7.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 8.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 8.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 8.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 8.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 8.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 8.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 9.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 9.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 9.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 9.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 9.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 9.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 9.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 10.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 10.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 10.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 10.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 10.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 10.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 11.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 11.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 11.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 11.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 11.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 11.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 11.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 12.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 12.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 12.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 12.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 12.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 12.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 13.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 13.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 13.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 13.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 13.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 13.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 13.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 14.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 14.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 14.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 14.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 14.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 14.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 15.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 15.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 15.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 15.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 15.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 15.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 15.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 16.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 16.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 16.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 16.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 16.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 16.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 17.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 17.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 17.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 17.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 17.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 17.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 17.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 18.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 18.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 18.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 18.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 18.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 18.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 19.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 19.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 19.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 19.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 19.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 19.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 19.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 20.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 20.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 20.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 20.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 20.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 20.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 21.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 21.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 21.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 21.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 21.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 21.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 21.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 22.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 22.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 22.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 22.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 22.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 22.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 23.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 23.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 23.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 23.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 23.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 23.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 23.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 24.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 24.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 24.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 24.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 24.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 24.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 25.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 25.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 25.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 25.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 25.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 25.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 25.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 26.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 26.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 26.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 26.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 26.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 26.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 27.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 27.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 27.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 27.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 27.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 27.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 27.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 28.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 28.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 28.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 28.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 28.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 28.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 29.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 29.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 29.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 29.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 29.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 29.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 29.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 30.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 30.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 30.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 30.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 30.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 30.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 31.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 31.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 31.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 31.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 31.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 31.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 31.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 32.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 32.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 32.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 32.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 32.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 32.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 33.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 33.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 33.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 33.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 33.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 33.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 33.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 34.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 34.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 34.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 34.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 34.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 34.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 35.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 35.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 35.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 35.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 35.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 35.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 35.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 36.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 36.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 36.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 36.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 36.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 36.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 37.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 37.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 37.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 37.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 37.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 37.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 37.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 38.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 38.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 38.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 38.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 38.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 38.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 39.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 39.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 39.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 39.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 39.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 39.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 39.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 40.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 40.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 40.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 40.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 40.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 40.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 41.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 41.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 41.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 41.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 41.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 41.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 41.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 42.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 42.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 42.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 42.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 42.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 42.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 43.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 43.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 43.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 43.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 43.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 43.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 43.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 44.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 44.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 44.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 44.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 44.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 44.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 45.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 45.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 45.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 45.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 45.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 45.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 45.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 46.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 46.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 46.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 46.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 46.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 46.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 47.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 47.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 47.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 47.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 47.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 47.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 47.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 48.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 48.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 48.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 48.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 48.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 48.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 49.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 49.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 49.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 49.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 49.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 49.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 49.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 50.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 50.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 50.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 50.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 50.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 50.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 51.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 51.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 51.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 51.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 51.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 51.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 51.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 52.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 52.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 52.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 52.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 52.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 52.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 53.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 53.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 53.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 53.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 53.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 53.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 53.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 54.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 54.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 54.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 54.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 54.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 54.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 55.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 55.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 55.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 55.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 55.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 55.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 55.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 56.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 56.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 56.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 56.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 56.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 56.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 57.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 57.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 57.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 57.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 57.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 57.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 57.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 58.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 58.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 58.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 58.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 58.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 58.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 59.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 59.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 59.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 59.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 59.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 59.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 59.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 60.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 60.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 60.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 60.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 60.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 60.75,
+      "instrument": "hihat"
+    },
+    {
+      "time": 61.0,
+      "instrument": "kick"
+    },
+    {
+      "time": 61.0,
+      "instrument": "hihat"
+    },
+    {
+      "time": 61.25,
+      "instrument": "hihat"
+    },
+    {
+      "time": 61.5,
+      "instrument": "snare"
+    },
+    {
+      "time": 61.5,
+      "instrument": "hihat"
+    },
+    {
+      "time": 61.75,
+      "instrument": "kick"
+    },
+    {
+      "time": 61.75,
+      "instrument": "hihat"
+    }
+  ],
+  "studentNotes": []
+}
